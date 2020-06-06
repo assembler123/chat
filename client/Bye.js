@@ -1,6 +1,5 @@
 import React,{useState,useEffect} from "react";
 import io from 'socket.io-client'
-import { IgnorePlugin } from "webpack";
 let socket;
 const Bye = ({match}) => {
         const ENDPOINT='http://localhost:3000'
@@ -17,6 +16,7 @@ const Bye = ({match}) => {
                 // alert("sent"+msg);
                 socket.emit('sendMessage',msg,()=>{
                         setMsg('');
+                        alert("msg set")
                 })
         }
         useEffect(()=>{
@@ -28,26 +28,32 @@ const Bye = ({match}) => {
                         <div className='top-b'><h2 style={{fontWeight:500}}>  <i className="fas fa-arrow-circle-left"></i>&nbsp;&nbsp; Room  {match.params.room} </h2>
                         </div>
                         <div className='chat-m'>
-                                {/* {msgs.map(e=>{
+                                {msgs.map(e=>{
                                         if(e.user==match.params.user)
                                         {
                                                 return(
-                                                <h1>{e.text}</h1>
-                                                );
+                                                        <div className='my-chat'>
+                                                                <p>{e.text}</p>
+                                                        </div>
+                                                        );
                                         }
                                         else if(e.user=='admin')
                                         {
                                                 return(
-                                                        <p>{e.text}</p>
+                                                        <div className='admin-chat'>
+                                                                <p>{e.text}</p>
+                                                        </div>
                                                 );
                                         }
-                                return (<p>{e.text}</p>)
-                                })} */}
+                                return (<div className='other-chat'><h4>{e.user}</h4>
+                                <p>{e.text}</p></div>)
+                                })}
                         </div>
                         <input type='text' placeholder='Type and press return/enter to send' value={msg} onChange={(e)=>{
                                 setMsg(e.target.value)
                         }}></input>
-                        <button onClick={sendMessage}><i className="fas fa-paper-plane"></i></button>
+                        <button onClick={()=>{sendMessage();setMsg('')}
+                        }><i className="fas fa-paper-plane"></i></button>
                         </div>)
         }
 

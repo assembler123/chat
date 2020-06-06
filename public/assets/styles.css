@@ -78,3 +78,56 @@ body{
     color: #fff;
     border:0.5px solid #f1f1f1;
 }
+.admin-chat
+{
+    background: #c6c6c6;
+    color: #565656;
+    margin: 5px auto;
+    border-radius: 3px;
+    width: 50%;
+
+}
+.admin-chat p
+{
+    font-size: 13px;
+    color: #fff;
+    padding: 5px;
+    text-align: center;
+}
+.my-chat
+{
+    background: #5dd890;
+    color: #fff;
+    border-radius: 3px;
+    max-width: 60%;
+    margin: 5px ;
+    word-wrap: break-word;
+
+    margin-left: auto;
+}
+.my-chat p
+{
+    padding: 5px;
+}
+.other-chat
+{
+    background: #f1f1f1;
+    color: #454545;
+    border-radius: 3px;
+    max-width: 60%;
+    margin: 5px ;
+    word-wrap: break-word;
+    margin-right: auto;
+}
+.other-chat h4
+{
+    padding: 1px;
+    margin:2px;
+    color:#2ecc71;
+}
+.other-chat p
+{
+    padding: 5px;
+    margin: 1px;
+    display: inline-block;
+}

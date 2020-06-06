@@ -7,7 +7,7 @@ class Routes extends React.Component {
         return (
         <Router> 
             <Switch>
-                {/* <Route path='/chat/:user/:room' component={Bye}></Route> */}
+                <Route path='/chat/:user/:room' component={Bye}></Route>
                 <Route path='/' component={Login}></Route>
             </Switch>
         </Router>

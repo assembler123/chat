@@ -10,5 +10,8 @@ npm install
 ```
 ### Chat server uses
   - NodeJS 
+    - version 13.4
+    - MongoDB 
+    - express version
   - ReactJS
   - MongoDB
